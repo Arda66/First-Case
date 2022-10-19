@@ -13,8 +13,7 @@ public class Employee {
 
     public double tax() {
         if (this.salary > 1000) {
-            return  (salary * 3)/100;
-
+            return  salary * 0.03;
         } else {
             return 0; // no tax
         }
@@ -23,7 +22,7 @@ public class Employee {
     public double bonus() {
         if (this.workHours > 40) {
             double bonus_hours = workHours - 40;
-            return bonus_hours * 30 * 4; // haftalık bonusu 4 ile çarpıp aylığı bulduk
+            return bonus_hours * 30 ; // haftalık bonusu 4 ile çarpabiliriz ?
         } else return 0; //no bonus
     }
 
@@ -33,19 +32,18 @@ public class Employee {
                 " İsim = '" + name + '\'' +
                 ", Maaş = " + salary +
                 ", Çalışma_Saati = " + workHours +
-                ", Alım_Yılı = " + hireYear;
+                ", BaşlangıçYılı = " + hireYear;
     }
 
-    public double raiseSalary() { // vergi ve bonusları dikkate alarak hesapla
-        double final_salary = this.salary + bonus() - tax();
+    public double raiseSalary() {
         int working_years = 2021 - hireYear;
         if (working_years < 10)
-            return (final_salary * 5) / 100;
+            return (this.salary * 0.05)+bonus()-tax();
         else if (working_years > 9 && working_years < 20)
-            return (final_salary * 10) / 100;
+            return (this.salary * 0.10)+bonus()-tax();
         else if (working_years > 19)
-            return (final_salary * 15) / 100;
-        else return final_salary;
+            return (this.salary * 0.15)+bonus()-tax();
+        else return 0;
     }
 
 }
