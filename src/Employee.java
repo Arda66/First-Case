@@ -1,8 +1,10 @@
 public class Employee {
-    public String name;
-    public double salary;
-    public double workHours;
-    public int hireYear;
+    private String name;
+    private double salary;
+    private double workHours;
+    private int hireYear;
+
+
 
     public Employee(String name, double salary, float workHours, int hireYear) {
         this.name = name;
@@ -46,4 +48,35 @@ public class Employee {
         else return 0;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public double getWorkHours() {
+        return workHours;
+    }
+
+    public void setWorkHours(double workHours) {
+        this.workHours = workHours;
+    }
+
+    public int getHireYear() {
+        return hireYear;
+    }
+
+    public void setHireYear(int hireYear) {
+        this.hireYear = hireYear;
+    }
 }
